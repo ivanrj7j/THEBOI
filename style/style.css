@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .content {
   width: 80%;
-  margin: auto;
+  margin: 10px auto;
   background: #242526;
   border-radius: 20px;
   -webkit-box-shadow: 5px 8px 25px #888888;
@@ -175,5 +175,73 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 20px;
   border-bottom: 1px solid #33363A;
   margin-bottom: 5px;
+}
+
+.image {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #33363A;
+}
+
+.like_stuff {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.like_stuff ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.like_stuff ul li {
+  padding: 3px 16.66%;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.like_stuff ul li button {
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background: none;
+  color: #E4E6EB;
+  margin: auto;
+  cursor: pointer;
+}
+
+.like_stuff ul li .liked, .like_stuff ul li .disliked {
+  color: #3578E5;
+}
+
+.like_stuff ul li:hover {
+  background: #606770;
+  border-radius: 50px;
+}
+
+.like_stuff ul li:hover button {
+  color: #1877F2;
+}
+
+@media only screen and (max-width: 280px) {
+  .content .poster_info p {
+    font-size: 10px;
+    font-weight: 100;
+  }
+  .fa, .fas {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

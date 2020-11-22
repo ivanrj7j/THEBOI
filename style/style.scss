@@ -135,10 +135,11 @@ h1, h2, h3, h4, h5, h6,p{
         display: block;
     }
   }
+ 
 
 .content{
     width: 80%;
-    margin: auto;
+    margin: 10px auto;
     background: $dark-navbar-bg;
     // height: 80vh;
     // overflow-y: scroll;
@@ -164,3 +165,56 @@ h1, h2, h3, h4, h5, h6,p{
     border-bottom: 1px solid $border-bottom;
     margin-bottom: 5px;
 }
+.image{
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-bottom;
+}
+.like_stuff{
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li{
+            padding: 3px 16.66%;
+            cursor: pointer;
+            button{
+                border: none;
+                outline: none;
+                font-size: 20px;
+                background: none;
+                color: $color-dark;
+                margin: auto;
+                cursor: pointer;
+            }
+            .liked, .disliked{
+                color: $active-blue;
+            }
+            transition: 0.3s ease;
+            &:hover{
+                background: $light-dark;
+                border-radius: 50px;
+                button{
+                    color: $blue-text;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .content{
+        .poster_info{
+            p{
+                font-size: 10px;
+                font-weight: 100;
+            }
+        }
+    }
+    .fa, .fas{
+        font-size: 10px;
+    }
+  }
