@@ -1,0 +1,36 @@
+$background-dark : #18191A;
+$color-dark : #E4E6EB;
+$classy-blue : #2D88FF;
+$light-dark : #606770;
+$blue-text : #1877F2;
+$active-blue : #3578E5;
+$notification-color : #FA383E;
+$button-pressed : #77A7FF;
+$disabled-text : #BEC3C9;
+$nabg : #4267B2;
+$dark-navbar-bg : #242526;
+
+@font-face{
+    font-family: myfont;
+    src: url(Fonts/Roboto-Black.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;;
+}
+
+body{
+    background: $background-dark;
+}
+
+h1, h2, h3, h4, h5, h6,p{
+    color: $color-dark;
+}
+
+.navbar{
+    background: $dark-navbar-bg;
+    padding: 25px;
+}

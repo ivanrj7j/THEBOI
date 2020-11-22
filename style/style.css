@@ -1,0 +1,26 @@
+@font-face {
+  font-family: myfont;
+  src: url(Fonts/Roboto-Black.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #18191A;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #E4E6EB;
+}
+
+.navbar {
+  background: #242526;
+  padding: 25px;
+}
+/*# sourceMappingURL=style.css.map */
