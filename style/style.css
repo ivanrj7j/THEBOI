@@ -23,9 +23,30 @@ h1, h2, h3, h4, h5, h6, p {
   background: #242526;
   padding: 25px;
   border-bottom: #33363A solid 1px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .nav-title h2 {
   color: #3578E5;
+}
+
+.search-btn {
+  color: #E4E6EB;
+  background-color: #606770;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  margin: 0px 8px;
+}
+
+.search-btn:hover {
+  color: #33363A;
 }
 /*# sourceMappingURL=style.css.map */

@@ -35,9 +35,25 @@ h1, h2, h3, h4, h5, h6,p{
     background: $dark-navbar-bg;
     padding: 25px;
     border-bottom: $border-bottom solid 1px;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
 }
 .nav-title{
     h2{
         color: $active-blue;
     }
+}
+
+.search-btn{
+    color: $color-dark;
+    background-color: $light-dark;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:hover{
+        color: $border-bottom;
+    }
+    margin: 0px 8px;
 }

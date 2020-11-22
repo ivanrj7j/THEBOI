@@ -1,0 +1,1 @@
+var search_toggler = document.getElementById('toggler')
