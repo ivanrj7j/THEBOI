@@ -22,5 +22,10 @@ h1, h2, h3, h4, h5, h6, p {
 .navbar {
   background: #242526;
   padding: 25px;
+  border-bottom: #33363A solid 1px;
+}
+
+.nav-title h2 {
+  color: #3578E5;
 }
 /*# sourceMappingURL=style.css.map */

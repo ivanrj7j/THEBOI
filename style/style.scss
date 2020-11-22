@@ -9,6 +9,7 @@ $button-pressed : #77A7FF;
 $disabled-text : #BEC3C9;
 $nabg : #4267B2;
 $dark-navbar-bg : #242526;
+$border-bottom : #33363A;
 
 @font-face{
     font-family: myfont;
@@ -33,4 +34,10 @@ h1, h2, h3, h4, h5, h6,p{
 .navbar{
     background: $dark-navbar-bg;
     padding: 25px;
+    border-bottom: $border-bottom solid 1px;
+}
+.nav-title{
+    h2{
+        color: $active-blue;
+    }
 }
