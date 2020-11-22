@@ -10,6 +10,7 @@ $disabled-text : #BEC3C9;
 $nabg : #4267B2;
 $dark-navbar-bg : #242526;
 $border-bottom : #33363A;
+$shadow : #888888;
 
 @font-face{
     font-family: myfont;
@@ -39,6 +40,8 @@ h1, h2, h3, h4, h5, h6,p{
     display: flex;
     flex-wrap: nowrap;
     position: fixed;
+    box-shadow: 3px 3px 25px $shadow;
+    margin-bottom: 20px;
 }
 .nav-title{
     h2{
@@ -132,3 +135,32 @@ h1, h2, h3, h4, h5, h6,p{
         display: block;
     }
   }
+
+.content{
+    width: 80%;
+    margin: auto;
+    background: $dark-navbar-bg;
+    // height: 80vh;
+    // overflow-y: scroll;
+    border-radius: 20px;
+    box-shadow: 5px 8px 25px $shadow;
+  }
+.poster_info{
+    display: flex;
+    .profile_image{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 3px solid $nabg;
+    }
+    h5{
+        span{
+            font-weight: 100;
+        }
+    }
+}
+.post_info{
+    padding: 20px;
+    border-bottom: 1px solid $border-bottom;
+    margin-bottom: 5px;
+}

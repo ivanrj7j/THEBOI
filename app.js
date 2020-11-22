@@ -43,3 +43,5 @@ window.addEventListener('resize', () => {
     navtoggle.classList.remove('fa-times');
 
 });
+
+// Navbar JavaScript top 

@@ -30,6 +30,9 @@ h1, h2, h3, h4, h5, h6, p {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   position: fixed;
+  -webkit-box-shadow: 3px 3px 25px #888888;
+          box-shadow: 3px 3px 25px #888888;
+  margin-bottom: 20px;
 }
 
 .nav-title h2 {
@@ -140,5 +143,37 @@ h1, h2, h3, h4, h5, h6, p {
   .barsline {
     display: block;
   }
+}
+
+.content {
+  width: 80%;
+  margin: auto;
+  background: #242526;
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 8px 25px #888888;
+          box-shadow: 5px 8px 25px #888888;
+}
+
+.poster_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.poster_info .profile_image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #4267B2;
+}
+
+.poster_info h5 span {
+  font-weight: 100;
+}
+
+.post_info {
+  padding: 20px;
+  border-bottom: 1px solid #33363A;
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=style.css.map */
