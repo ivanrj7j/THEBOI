@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6,p{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
+    position: fixed;
 }
 .nav-title{
     h2{
@@ -49,7 +50,7 @@ h1, h2, h3, h4, h5, h6,p{
     color: $color-dark;
     background-color: $light-dark;
     padding: 5px;
-    border-radius: 50%;
+    border-radius: 20px;
     cursor: pointer;
     transition: 0.3s ease;
     &:hover{
@@ -57,3 +58,50 @@ h1, h2, h3, h4, h5, h6,p{
     }
     margin: 0px 8px;
 }
+.search_in{
+    border-radius: 20px;
+    background: $light-dark;
+    color: $color-dark;
+    outline: none;
+    border: none;
+    padding: 4px;
+}
+
+.d-none{
+    display: none;
+}
+
+.navitem{
+    a{
+        color: $classy-blue;
+        font-size: 28px;
+        padding: 3px 18px;
+        transition: 0.3s ease;
+        &:hover{
+            background: $light-dark;
+            border-radius: 5px;
+            color: $active-blue;
+        }
+    }
+    position: relative;
+    left: 30%;
+}
+
+.barsline{
+    color: $blue-text;
+    padding: 10px;
+    background-color: $light-dark;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    float: right;
+    margin: 0 10px;
+}
+
+@media only screen and (max-width: 594px) {
+    .navitem{
+        display: none;
+    }
+  }

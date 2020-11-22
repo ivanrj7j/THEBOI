@@ -12,11 +12,27 @@
 
 <body>
     <nav class="navbar">
-        <div class="nav-title"><h2>THE <span class="boi">BOI</span></h2></div>
+        <div class="nav-title">
+            <h2>THE <span class="boi">BOI</span></h2>
+        </div>
         <div id="toggler">
             <i class="fa fa-search search-btn" aria-hidden="true"></i>
+            <form action="/search"><input type="search" name="q" id="search" class="search_in d-none"></form>
+        </div>
+        
+        <div class="navitem">
+
+            <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <a href="#"><i class="fas fa-cog"></i></a>
+            <a href="#"><i class="fas fa-users"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="burger">
+            <button class="barsline"><i class="fa fa-bars" aria-hidden="true"></i></button>
         </div>
     </nav>
+
+    <script src="app.js"></script>
 </body>
 
 </html>

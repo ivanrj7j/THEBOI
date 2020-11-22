@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  position: fixed;
 }
 
 .nav-title h2 {
@@ -39,7 +40,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: #E4E6EB;
   background-color: #606770;
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 20px;
   cursor: pointer;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -48,5 +49,56 @@ h1, h2, h3, h4, h5, h6, p {
 
 .search-btn:hover {
   color: #33363A;
+}
+
+.search_in {
+  border-radius: 20px;
+  background: #606770;
+  color: #E4E6EB;
+  outline: none;
+  border: none;
+  padding: 4px;
+}
+
+.d-none {
+  display: none;
+}
+
+.navitem {
+  position: relative;
+  left: 30%;
+}
+
+.navitem a {
+  color: #2D88FF;
+  font-size: 28px;
+  padding: 3px 18px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.navitem a:hover {
+  background: #606770;
+  border-radius: 5px;
+  color: #3578E5;
+}
+
+.barsline {
+  color: #1877F2;
+  padding: 10px;
+  background-color: #606770;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  float: right;
+  margin: 0 10px;
+}
+
+@media only screen and (max-width: 594px) {
+  .navitem {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
