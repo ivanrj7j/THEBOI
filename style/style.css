@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .barsline {
   color: #1877F2;
-  padding: 10px;
+  padding: 3px 10px;
   background-color: #606770;
   outline: none;
   border: none;
@@ -94,11 +94,51 @@ h1, h2, h3, h4, h5, h6, p {
   cursor: pointer;
   float: right;
   margin: 0 10px;
+  display: none;
+}
+
+.navitem-t {
+  position: fixed;
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #606770;
+  width: 100%;
+  left: 0px;
+  top: -9px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navitem-t a {
+  color: #2D88FF;
+  font-size: 28px;
+  padding: 3px 18px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.navitem-t a:hover {
+  background: #606770;
+  border-radius: 5px;
+  color: #3578E5;
 }
 
 @media only screen and (max-width: 594px) {
   .navitem {
     display: none;
+  }
+  .barsline {
+    display: block;
   }
 }
 /*# sourceMappingURL=style.css.map */
