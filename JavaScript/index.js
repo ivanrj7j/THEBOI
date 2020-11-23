@@ -166,17 +166,19 @@ function change_width(items, value) {
         }
     });
 
+    var fs = false;
     full_screen.addEventListener('click', () => {
-        var fs = false;
         const element = items.parentElement;
         if (!fs) {
+            fs = true;
             const v = element.requestFullscreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
             v.call(element);
-            fs = true;
+            console.log(fs);
         } else {
+            fs = false;
             const cancellFullScreen = document.exitFullscreen || document.mozCancelFullScreen || document.webkitExitFullscreen || document.msExitFullscreen;
             cancellFullScreen.call(document);
-            fs = false;
+            console.log(fs);
         }
     });
 
