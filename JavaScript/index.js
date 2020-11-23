@@ -32,8 +32,8 @@ function actions(like_btn, value, obj) {
     dislike_btn.parentElement.addEventListener('click', () => {
         dislike_btn.click();
     });
-    var liked = false;
-    var disliked = false;
+    var liked = Boolean('liked' in like_btn.classList || 'liked' == like_btn.classList[1]);
+    var disliked = Boolean('disliked' in like_btn.classList || 'disliked' == like_btn.classList[1]);
     like_btn.addEventListener('click', function () {
         
         if (liked) {
