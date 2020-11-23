@@ -139,11 +139,17 @@
   background: #e4e6ebb4;
 }
 
-.controls .juice-container:hover .juice-width {
+.controls .juice-container:hover .buffered .juice-width {
   background-color: #3578E5;
 }
 
-.controls .juice-container .juice-width {
+.controls .juice-container .buffered {
+  width: 0%;
+  height: 100%;
+  background-color: #ffffffdc;
+}
+
+.controls .juice-container .buffered .juice-width {
   width: 0%;
   background-color: #4267B2;
   height: 100%;
@@ -151,7 +157,7 @@
   transition: 0.2s ease;
 }
 
-.controls .juice-container .juice-width:hover {
+.controls .juice-container .buffered .juice-width:hover {
   background-color: #3578E5;
 }
 /*# sourceMappingURL=index.css.map */

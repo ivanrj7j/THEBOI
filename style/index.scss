@@ -113,19 +113,26 @@
         transition: 0.2s ease;
         &:hover{
             background: $lower-c2;
-            .juice-width{
-                background-color: $active-blue;
-
+            .buffered{
+                .juice-width{
+                    background-color: $active-blue;
+                    
+                }
             }
         }
-        .juice-width{
+        .buffered{
             width: 0%;
-            background-color: $nabg;
             height: 100%;
-            transition: 0.2s ease;
-            
-            &:hover{
-                background-color: $active-blue;
+            background-color: #ffffffdc;
+            .juice-width{
+                width: 0%;
+                background-color: $nabg;
+                height: 100%;
+                transition: 0.2s ease;
+                
+                &:hover{
+                    background-color: $active-blue;
+                }
             }
         }
     }

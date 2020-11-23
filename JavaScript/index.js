@@ -77,7 +77,8 @@ function change_width(items, value) {
     var juice = items.querySelector('.juice-container');
     var juice_con = juice.querySelector('.juice-width');
     var video = items.parentElement.querySelector('video');
-    var playpause = items.querySelector('.playpause')
+    var playpause = items.querySelector('.playpause');
+    var buffer_range = items.querySelector('.buffered')
     juice.addEventListener('mousedown', (e)=>{
         var rect = e.target.getBoundingClientRect();
         var x = e.clientX - rect.left;
@@ -107,6 +108,9 @@ function change_width(items, value) {
     video.addEventListener('timeupdate', ()=>{
         var percent = (video.currentTime / video.duration) * 100;
         juice_con.style.width = percent + "%";
+        var buffered = video.buffered.end(0);
+        var perbur = (buffered / video.duration) * 100;
+        buffer_range.style.width = perbur + '%';
         if (video.ended) {
             icon.classList.remove('fa-pause');
             icon.classList.remove('fa-play');
