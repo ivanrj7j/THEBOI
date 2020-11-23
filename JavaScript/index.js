@@ -143,6 +143,18 @@ function change_width(items, value) {
     video.addEventListener('click', ()=>{
         playpause.click();
     });
+    video.addEventListener('dblclick', (e)=>{
+        var rect = e.target.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var div_width = video.offsetWidth;
+        var width_percent = x / div_width * 100;
+        if (width_percent >= 50) {
+            video.currentTime = video.currentTime + 5;
+        } else {
+            video.currentTime = video.currentTime - 5;
+            
+        }
+    });
 }
 
 
