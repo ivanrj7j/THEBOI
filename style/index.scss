@@ -85,13 +85,16 @@
 .image{
     video{
         width: 100%;
-        max-width: 100%;
-        max-height: 500px;
+        height: 100%;
     }
 }
 
 .controls{
     display: flex;
+    opacity: 0;
+    transition: 0.2s ease;
+    background: $dark-navbar-bg-light;
+    
     .playpause{
         background: none;
         outline: none;
@@ -107,10 +110,11 @@
     }
     .juice-container{
         background: $lower-color;
-        width: 80%;
+        width: 70%;
         height: 10px;
         margin: auto;
         transition: 0.2s ease;
+        // display: flex;
         &:hover{
             background: $lower-c2;
             .buffered{
@@ -120,10 +124,7 @@
                 }
             }
         }
-        .buffered{
-            width: 0%;
-            height: 100%;
-            background-color: $lower-c3;
+        
             .juice-width{
                 width: 0%;
                 background-color: $nabg;
@@ -134,9 +135,25 @@
                     background-color: $active-blue;
                 }
             }
-        }
+        // }
     }
     .timestamp{
         margin: 5px auto;
+    }
+    
+    transform: translateY(-32px);
+}
+
+.fullscreen{
+    background: none;
+    outline: none;
+    border: none;
+    color: $nabg;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 3px;
+    transition: 0.2s ease;
+    &:hover{
+        color: $active-blue;
     }
 }

@@ -100,14 +100,19 @@
 
 .image video {
   width: 100%;
-  max-width: 100%;
-  max-height: 500px;
+  height: 100%;
 }
 
 .controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  background: #2425269d;
+  -webkit-transform: translateY(-32px);
+          transform: translateY(-32px);
 }
 
 .controls .playpause {
@@ -128,7 +133,7 @@
 
 .controls .juice-container {
   background: #e4e6ebd3;
-  width: 80%;
+  width: 70%;
   height: 10px;
   margin: auto;
   -webkit-transition: 0.2s ease;
@@ -143,13 +148,7 @@
   background-color: #3578E5;
 }
 
-.controls .juice-container .buffered {
-  width: 0%;
-  height: 100%;
-  background-color: #e4e6ebd0;
-}
-
-.controls .juice-container .buffered .juice-width {
+.controls .juice-container .juice-width {
   width: 0%;
   background-color: #4267B2;
   height: 100%;
@@ -157,11 +156,27 @@
   transition: 0.2s ease;
 }
 
-.controls .juice-container .buffered .juice-width:hover {
+.controls .juice-container .juice-width:hover {
   background-color: #3578E5;
 }
 
 .controls .timestamp {
   margin: 5px auto;
+}
+
+.fullscreen {
+  background: none;
+  outline: none;
+  border: none;
+  color: #4267B2;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 3px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.fullscreen:hover {
+  color: #3578E5;
 }
 /*# sourceMappingURL=index.css.map */

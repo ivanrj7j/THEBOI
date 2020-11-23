@@ -74,11 +74,24 @@ function actions(like_btn, value, obj) {
 var controls = document.querySelectorAll('.controls');
 controls.forEach(change_width)
 function change_width(items, value) {
+
     var juice = items.querySelector('.juice-container');
     var juice_con = juice.querySelector('.juice-width');
     var video = items.parentElement.querySelector('video');
     var playpause = items.querySelector('.playpause');
-    var buffer_range = items.querySelector('.buffered')
+    var full_screen = items.querySelector('.fullscreen');
+
+    video.parentElement.addEventListener('mouseover', () => {
+        items.style.opacity = '100';
+    });
+    video.parentElement.addEventListener('mouseout', () => {
+        items.style.opacity = '0';
+    })
+
+    items.addEventListener('mouseover', () => {
+        items.style.opacity = '100';
+
+    })
     juice.addEventListener('mousedown', (e) => {
         var rect = e.target.getBoundingClientRect();
         var x = e.clientX - rect.left;
@@ -110,9 +123,6 @@ function change_width(items, value) {
     video.addEventListener('timeupdate', () => {
         var percent = (video.currentTime / video.duration) * 100;
         juice_con.style.width = percent + "%";
-        var buffered = video.buffered.end(0);
-        var perbur = (buffered / video.duration) * 100;
-        buffer_range.style.width = perbur + '%';
         if (video.ended) {
             icon.classList.remove('fa-pause');
             icon.classList.remove('fa-play');
@@ -138,12 +148,12 @@ function change_width(items, value) {
         }
         timestamp.innerHTML = curmins + ':' + cursec + "/" + durmins + ":" + dursec;
 
-        
+
     });
-    video.addEventListener('click', ()=>{
+    video.addEventListener('click', () => {
         playpause.click();
     });
-    video.addEventListener('dblclick', (e)=>{
+    video.addEventListener('dblclick', (e) => {
         var rect = e.target.getBoundingClientRect();
         var x = e.clientX - rect.left;
         var div_width = video.offsetWidth;
@@ -152,9 +162,24 @@ function change_width(items, value) {
             video.currentTime = video.currentTime + 5;
         } else {
             video.currentTime = video.currentTime - 5;
-            
+
         }
     });
+
+    full_screen.addEventListener('click', () => {
+        var fs = false;
+        const element = items.parentElement;
+        if (!fs) {
+            const v = element.requestFullscreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+            v.call(element);
+            fs = true;
+        } else {
+            const cancellFullScreen = document.exitFullscreen || document.mozCancelFullScreen || document.webkitExitFullscreen || document.msExitFullscreen;
+            cancellFullScreen.call(document);
+            fs = false;
+        }
+    });
+
 }
 
 
