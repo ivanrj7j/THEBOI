@@ -35,7 +35,12 @@ h1, h2, h3, h4, h5, h6,p{
         color: $active-blue;
     }
 }
-
+.profile_image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid $nabg;
+}
 .search-btn{
     color: $color-dark;
     background-color: $light-dark;

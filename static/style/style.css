@@ -39,6 +39,14 @@ h1, h2, h3, h4, h5, h6, p {
   color: #3578E5;
 }
 
+.profile_image_nav {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #4267B2;
+  transform: translateY(11px);
+}
+
 .search-btn {
   color: #E4E6EB;
   background-color: #606770;
@@ -136,7 +144,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: #3578E5;
 }
 
-@media only screen and (max-width: 594px) {
+@media only screen and (max-width: 707px) {
   .navitem {
     display: none;
   }

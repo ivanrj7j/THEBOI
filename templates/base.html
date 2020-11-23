@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey Boi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link href="{{ url_for('static', filename='Fonts/roboto.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Fonts/fa/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename=css) }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-title">
+            <h2>THE <span class="boi">BOI</span></h2>
+        </div>
+        <div id="toggler">
+            <i class="fa fa-search search-btn" aria-hidden="true"></i>
+            <form action="/search"><input type="search" name="q" id="search" class="search_in d-none"></form>
+        </div>
+
+        <div class="navitem" id="navitem">
+
+            <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <a href="#"><i class="fas fa-cog"></i></a>
+            <a href="#"><i class="fas fa-users"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href=""><img src="{{ url_for('static', filename='Images/notAvailable.png') }}" alt="" class="profile_image_nav"></a>
+        </div>
+        <div class="burger">
+            <button class="barsline"><i class="fa fa-bars" aria-hidden="true" id="barsline"></i></button>
+        </div>
+    </nav>
+    <br><br><br><br><br><br>
+
+    {% block header %}{% endblock %}
+
+    
+<!-- testing how the website looks  -->
+<!-- todo:fetch posts from flask  -->
+<script src="{{ url_for('static', filename='JavaScript/app.js') }}"></script>
+<script src="{{ url_for('static', filename=js) }}"></script>
+</body>
+
+</html>
+{% block foot %}{% endblock %}
+
+    

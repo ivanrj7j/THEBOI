@@ -1,140 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hey Boi</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
-    <link href="{{ url_for('static', filename='Fonts/roboto.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='Fonts/fa/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
-</head>
+{% extends 'base.html' %}
+{% block header %}
 
-<body>
-    <nav class="navbar">
-        <div class="nav-title">
-            <h2>THE <span class="boi">BOI</span></h2>
+<div class="content post_info">
+    <div class="post_info">
+        <div class="poster_info">
+            <img src="{{ url_for('static', filename='Images/notAvailable.png') }}" alt="" class="profile_image">
+            <h5>HOMBOI posted <br>
+                <span>8h</span>
+            </h5>
         </div>
-        <div id="toggler">
-            <i class="fa fa-search search-btn" aria-hidden="true"></i>
-            <form action="/search"><input type="search" name="q" id="search" class="search_in d-none"></form>
-        </div>
-
-        <div class="navitem" id="navitem">
-
-            <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
-            <a href="#"><i class="fas fa-cog"></i></a>
-            <a href="#"><i class="fas fa-users"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-        </div>
-        <div class="burger">
-            <button class="barsline"><i class="fa fa-bars" aria-hidden="true" id="barsline"></i></button>
-        </div>
-    </nav>
-    <br><br><br><br><br><br>
-    {{ url_for('static', filename='Images/test/video/test.mp4') }}
-
-    <div class="content post_info">
-        <div class="post_info">
-            <div class="poster_info">
-                <img src="{{ url_for('static', filename='Images/notAvailable.png') }}" alt="" class="profile_image">
-                <h5>HOMBOI posted <br>
-                    <span>8h</span>
-                </h5>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora possimus aliquid, explicabo nisi fugit
-                asperiores! Saepe, ipsam, dolor tempora obcaecati itaque error facilis nisi ab laudantium aliquid
-                numquam, quas ducimus.</p>
-        </div>
-        <div class="image">
-            <img src="{{ url_for('static', filename='Images/test.jpg') }}" alt="" width="100%">
-        </div>
-        <div class="actions">
-            <div class="like_stuff">
-                <ul class="action_list">
-                    <li><button class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button></li>
-                    <li><button class="dislike"><i class="fas fa-thumbs-down    "></i></button></li>
-                    <li><button class="share"><i class="fa fa-share" aria-hidden="true"></i></button></li>
-                </ul>
-            </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora possimus aliquid, explicabo nisi fugit
+            asperiores! Saepe, ipsam, dolor tempora obcaecati itaque error facilis nisi ab laudantium aliquid
+            numquam, quas ducimus.</p>
+    </div>
+    <div class="image">
+        <img src="{{ url_for('static', filename='Images/test.jpg') }}" alt="" width="100%">
+    </div>
+    <div class="actions">
+        <div class="like_stuff">
+            <ul class="action_list">
+                <li><button class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button></li>
+                <li><button class="dislike"><i class="fas fa-thumbs-down    "></i></button></li>
+                <li><button class="share"><i class="fa fa-share" aria-hidden="true"></i></button></li>
+            </ul>
         </div>
     </div>
-    <div class="content post_info">
-        <div class="post_info">
-            <div class="poster_info">
-                <img src="{{ url_for('static', filename='Images/notAvailable.png') }}" alt="" class="profile_image">
-                <h5>HOMBOI posted <br>
-                    <span>8h</span>
-                </h5>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora possimus aliquid, explicabo nisi fugit
-                asperiores! Saepe, ipsam, dolor tempora obcaecati itaque error facilis nisi ab laudantium aliquid
-                numquam, quas ducimus.</p>
+</div>
+<div class="content post_info">
+    <div class="post_info">
+        <div class="poster_info">
+            <img src="{{ url_for('static', filename='Images/notAvailable.png') }}" alt="" class="profile_image">
+            <h5>HOMBOI posted <br>
+                <span>8h</span>
+            </h5>
         </div>
-        <div class="image">
-            <video src="{{ url_for('static', filename='Images/test/video/testvertical.mp4') }}"></video>
-            <div class="controls">
-                <button class="playpause"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <p class="timestamp">00:00/00:00</p>
-                <div class="juice-container">
-                    <div class="juice-width"></div>
-                    <!-- <div class="buffered"> -->
-                    <!-- </div> -->
-                </div>
-                <button class="fullscreen"><i class="fas fa-expand"></i></button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora possimus aliquid, explicabo nisi fugit
+            asperiores! Saepe, ipsam, dolor tempora obcaecati itaque error facilis nisi ab laudantium aliquid
+            numquam, quas ducimus.</p>
+    </div>
+    <div class="image">
+        <video src="{{ url_for('static', filename='Images/test/video/testvertical.mp4') }}"></video>
+        <div class="controls">
+            <button class="playpause"><i class="fa fa-play" aria-hidden="true"></i></button>
+            <p class="timestamp">00:00/00:00</p>
+            <div class="juice-container">
+                <div class="juice-width"></div>
+                <!-- <div class="buffered"> -->
+                <!-- </div> -->
             </div>
-        </div>
-        <div class="actions">
-            <div class="like_stuff">
-                <ul  class="action_list">
-                    <li><button class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button></li>
-                    <li><button class="dislike"><i class="fas fa-thumbs-down    "></i></button></li>
-                    <li><button class="share"><i class="fa fa-share" aria-hidden="true"></i></button></li>
-                </ul>
-            </div>
+            <button class="fullscreen"><i class="fas fa-expand"></i></button>
         </div>
     </div>
-    <div class="content post_info">
-        <div class="post_info">
-            <div class="poster_info">
-                <img src="{{ url_for('static', filename='Images/notAvailable.png') }}" alt="" class="profile_image">
-                <h5>HOMBOI posted <br>
-                    <span>8h</span>
-                </h5>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora possimus aliquid, explicabo nisi fugit
-                asperiores! Saepe, ipsam, dolor tempora obcaecati itaque error facilis nisi ab laudantium aliquid
-                numquam, quas ducimus.</p>
-        </div>
-        <div class="image">
-            <video src="{{ url_for('static', filename='Images/test/video/test.mp4') }}"></video>
-            <div class="controls">
-                <button class="playpause"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <p class="timestamp">00:00</p>
-                
-                <div class="juice-container">
-                    <div class="juice-width"></div>
-                    <!-- <div class="buffered"> -->
-                    <!-- </div> -->
-                </div>
-                <button class="fullscreen"><i class="fas fa-expand"></i></button>
-            </div>
-        </div>
-        <div class="actions">
-            <div class="like_stuff">
-                <ul  class="action_list">
-                    <li><button class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button></li>
-                    <li><button class="dislike"><i class="fas fa-thumbs-down    "></i></button></li>
-                    <li><button class="share"><i class="fa fa-share" aria-hidden="true"></i></button></li>
-                </ul>
-            </div>
+    <div class="actions">
+        <div class="like_stuff">
+            <ul class="action_list">
+                <li><button class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button></li>
+                <li><button class="dislike"><i class="fas fa-thumbs-down    "></i></button></li>
+                <li><button class="share"><i class="fa fa-share" aria-hidden="true"></i></button></li>
+            </ul>
         </div>
     </div>
+</div>
+<div class="content post_info">
+    <div class="post_info">
+        <div class="poster_info">
+            <img src="{{ url_for('static', filename='Images/notAvailable.png') }}" alt="" class="profile_image">
+            <h5>HOMBOI posted <br>
+                <span>8h</span>
+            </h5>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora possimus aliquid, explicabo nisi fugit
+            asperiores! Saepe, ipsam, dolor tempora obcaecati itaque error facilis nisi ab laudantium aliquid
+            numquam, quas ducimus.</p>
+    </div>
+    <div class="image">
+        <video src="{{ url_for('static', filename='Images/test/video/test.mp4') }}"></video>
+        <div class="controls">
+            <button class="playpause"><i class="fa fa-play" aria-hidden="true"></i></button>
+            <p class="timestamp">00:00</p>
 
-    <!-- testing how the website looks  -->
-    <!-- todo:fetch posts from flask  -->
-    <script src="{{ url_for('static', filename='JavaScript/app.js') }}"></script>
-    <script src="{{ url_for('static', filename='JavaScript/index.js') }}"></script>
-</body>
+            <div class="juice-container">
+                <div class="juice-width"></div>
+                <!-- <div class="buffered"> -->
+                <!-- </div> -->
+            </div>
+            <button class="fullscreen"><i class="fas fa-expand"></i></button>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="like_stuff">
+            <ul class="action_list">
+                <li><button class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button></li>
+                <li><button class="dislike"><i class="fas fa-thumbs-down    "></i></button></li>
+                <li><button class="share"><i class="fa fa-share" aria-hidden="true"></i></button></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-</html>
+
+{% block foot %}
+{% endblock %}
+
+{% endblock %}
