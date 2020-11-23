@@ -1,0 +1,132 @@
+@import 'variables';
+
+.content{
+    width: 80%;
+    margin: 10px auto;
+    background: $dark-navbar-bg;
+    // height: 80vh;
+    // overflow-y: scroll;
+    border-radius: 20px;
+    box-shadow: 5px 8px 25px $shadow;
+  }
+.poster_info{
+    display: flex;
+    .profile_image{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 3px solid $nabg;
+    }
+    h5{
+        span{
+            font-weight: 100;
+        }
+    }
+}
+.post_info{
+    padding: 20px;
+    border-bottom: 1px solid $border-bottom;
+    margin-bottom: 5px;
+}
+.image{
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-bottom;
+}
+.like_stuff{
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li{
+            padding: 3px 16.66%;
+            cursor: pointer;
+            button{
+                border: none;
+                outline: none;
+                font-size: 20px;
+                background: none;
+                color: $color-dark;
+                margin: auto;
+                cursor: pointer;
+            }
+            .liked, .disliked{
+                color: $active-blue;
+            }
+            transition: 0.3s ease;
+            &:hover{
+                background: $light-dark;
+                border-radius: 50px;
+                button{
+                    color: $blue-text;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .content{
+        .poster_info{
+            p{
+                font-size: 10px;
+                font-weight: 100;
+            }
+        }
+    }
+    .fa, .fas{
+        font-size: 10px;
+    }
+  }
+
+.image{
+    video{
+        width: 100%;
+        max-width: 100%;
+        max-height: 500px;
+    }
+}
+
+.controls{
+    display: flex;
+    .playpause{
+        background: none;
+        outline: none;
+        border: none;
+        color: $nabg;
+        cursor: pointer;
+        font-size: 20px;
+        margin-left: 3px;
+        transition: 0.2s ease;
+        &:hover{
+            color: $active-blue;
+        }
+    }
+    .juice-container{
+        background: $lower-color;
+        width: 80%;
+        height: 10px;
+        margin: auto;
+        transition: 0.2s ease;
+        &:hover{
+            background: $lower-c2;
+            .juice-width{
+                background-color: $active-blue;
+
+            }
+        }
+        .juice-width{
+            width: 0%;
+            background-color: $nabg;
+            height: 100%;
+            transition: 0.2s ease;
+            
+            &:hover{
+                background-color: $active-blue;
+            }
+        }
+    }
+}

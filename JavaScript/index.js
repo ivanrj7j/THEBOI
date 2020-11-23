@@ -70,6 +70,52 @@ function actions(like_btn, value, obj) {
     });
 }
 
+
+var controls = document.querySelectorAll('.controls');
+controls.forEach(change_width)
+function change_width(items, value) {
+    var juice = items.querySelector('.juice-container');
+    var juice_con = juice.querySelector('.juice-width');
+    var video = items.parentElement.querySelector('video');
+    var playpause = items.querySelector('.playpause')
+    juice.addEventListener('mousedown', (e)=>{
+        var rect = e.target.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var div_width = juice.offsetWidth;
+        var width_percent = x / div_width * 100;
+        video.currentTime = video.duration * (width_percent / 100);
+    });
+    juice.addEventListener('mouseup', (e)=>{
+        var rect = e.target.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var div_width = juice.offsetWidth;
+        var width_percent = x / div_width * 100;
+        video.currentTime = video.duration * (width_percent / 100);
+    });
+    var icon = playpause.querySelector('.fa');
+    playpause.addEventListener('click', ()=>{
+        if (video.paused) {
+            video.play();
+            icon.classList.remove('fa-play')
+            icon.classList.add('fa-pause')
+        }else{
+            video.pause();
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+        }
+    });
+    video.addEventListener('timeupdate', ()=>{
+        var percent = (video.currentTime / video.duration) * 100;
+        juice_con.style.width = percent + "%";
+        if (video.ended) {
+            icon.classList.remove('fa-pause');
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-play');
+        }
+    });
+}
+
+
 // for (let index = 0; index < actions.length; index++) {
 //     const element = actions[index];
 //     console.log(element)
