@@ -11,6 +11,14 @@
     font-family: 'Roboto', sans-serif;;
 }
 
+a{
+    color: $button-pressed;
+}
+
+.danger{
+    color: $notification-color;
+}
+
 body{
     background: $background-dark;
 }
@@ -35,11 +43,12 @@ h1, h2, h3, h4, h5, h6,p{
         color: $active-blue;
     }
 }
-.profile_image{
+.profile_image_nav{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 3px solid $nabg;
+    transform: translateY(11px);
 }
 .search-btn{
     color: $color-dark;

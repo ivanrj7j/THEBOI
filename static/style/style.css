@@ -11,6 +11,14 @@
   font-family: 'Roboto', sans-serif;
 }
 
+a {
+  color: #77A7FF;
+}
+
+.danger {
+  color: #FA383E;
+}
+
 body {
   background: #18191A;
 }
@@ -44,7 +52,8 @@ h1, h2, h3, h4, h5, h6, p {
   height: 40px;
   border-radius: 50%;
   border: 3px solid #4267B2;
-  transform: translateY(11px);
+  -webkit-transform: translateY(11px);
+          transform: translateY(11px);
 }
 
 .search-btn {
@@ -144,7 +153,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: #3578E5;
 }
 
-@media only screen and (max-width: 707px) {
+@media only screen and (max-width: 594px) {
   .navitem {
     display: none;
   }

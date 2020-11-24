@@ -1,0 +1,58 @@
+.information {
+  background: #18191A;
+  -webkit-box-shadow: 5px 8px 15px #888888;
+          box-shadow: 5px 8px 15px #888888;
+  min-width: 240px;
+  width: 40%;
+  padding: 30px;
+  border-radius: 40px;
+  margin: 10px;
+}
+
+.form_control {
+  background: #606770;
+  color: #E4E6EB;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.form_control::-webkit-input-placeholder {
+  color: #e4e6ebb4;
+}
+
+.form_control:-ms-input-placeholder {
+  color: #e4e6ebb4;
+}
+
+.form_control::-ms-input-placeholder {
+  color: #e4e6ebb4;
+}
+
+.form_control::placeholder {
+  color: #e4e6ebb4;
+}
+
+.signup {
+  color: #E4E6EB;
+  background: #2D88FF;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.signup:hover {
+  color: #ffffff;
+  background: #3578E5;
+}
+
+.warinings p {
+  padding: 5px;
+}
+/*# sourceMappingURL=login.css.map */

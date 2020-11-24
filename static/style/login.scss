@@ -1,0 +1,43 @@
+@import 'variables';
+
+.information{
+    background: $background-dark;
+    box-shadow: 5px 8px 15px $shadow;
+    min-width: 240px;
+    width: 40%;
+    padding: 30px;
+    border-radius: 40px;
+    margin: 10px;
+}
+.form_control{
+    background: $light-dark;
+    color: $color-dark;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    &::placeholder{
+        color: $lower-c2;
+    }
+}
+
+.signup{
+    color: $color-dark;
+    background: $classy-blue;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    transition: 0.2s ease;
+    cursor: pointer;
+    padding: 10px;
+    &:hover{
+        color: #ffffff;
+        background: $active-blue;
+    }
+}
+.warinings{
+    p{
+        padding: 5px;
+    }
+}

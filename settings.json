@@ -1,5 +1,7 @@
 {
     "general-settings":{
-        "title": "THE BOI"
+        "title": "THE BOI",
+        "skey": ":];n~fXuuz`B(o^n@)<&0@1NRQvFAFjnP*GLUo'nJn8!6o<Pa?^kLr,?q@,AFKZ",
+        "db": "mysql://root@localhost/boi"
     }
 }

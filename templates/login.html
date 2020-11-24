@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block header %}
+<center>
+    <div class="information">
+        <label for="" class="holder">
+            <p>Email</p>
+        </label>
+        <input type="email" name="" placeholder="Email" id="email" class="form_control">
+        <label for="" class="holder">
+            <p>Name</p>
+        </label>
+        <input type="text" name="" placeholder="Name" id="name" class="form_control">
+        <label for="" class="holder">
+            <p>Password</p>
+        </label>
+        <input type="password" name="" placeholder="Password" id="password" class="form_control">
+        <label for="" class="holder">
+            <p>Repeat Password</p>
+        </label>
+        <input type="password" name="" placeholder="Repeat Password" id="rp" class="form_control">
+        <label for="" class="holder">
+            <p>User Name</p>
+        </label>
+        <input type="username" name="" placeholder="User Name" id="un" class="form_control">
+        <label for="" class="holder">
+            <p>Gender</p>
+        </label>
+        <select name="" id="gender" class="form_control">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <label for="" class="holder">
+            <p>Birthday</p>
+        </label>
+        <input type="date" name="" id="dob" class="form_control"><br>
+        <button class="signup">Sign Up</button>
+        <br>
+        <div class="warinings">
+            <p class="w">Fillout The form</p>
+            <p>Already have an <a href="/login">account?</a></p>
+        </div>
+    </div>
+</center>
+
+
+{% block foot %}
+{% endblock %}
+
+{% endblock %}
