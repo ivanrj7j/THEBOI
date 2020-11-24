@@ -19,6 +19,10 @@ a {
   color: #FA383E;
 }
 
+.warning {
+  color: #ffd000;
+}
+
 body {
   background: #18191A;
 }
