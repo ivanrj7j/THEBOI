@@ -5,6 +5,8 @@ import json
 from hashlib import md5
 from date import datenow
 from date import check_age
+from flask_mail import Mail
+from flask_mail import Message
 
 # importing all required modules
 settings = json.load(open('settings.json', 'r'))
@@ -12,12 +14,21 @@ general_settings = settings['general-settings']
 title = general_settings['title']
 secret_key = general_settings['skey']
 db = general_settings['db']
+email_settings = settings['email']
+email = email['sender']
+password = email['password']
+port = email['port']
 # importing some required variables z
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = db
 app.config['SECRET_KEY'] = secret_key
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+app.config['MAIL_PORT'] = port
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = email
+app.config['MAIL_PASSWORD'] = password
+db = SQLAlchemy(pp)
+mail = Mail(app)
 
 
 '''Declaring models'''
