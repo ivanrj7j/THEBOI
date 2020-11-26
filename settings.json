@@ -7,6 +7,7 @@
     "email":{
         "sender": "ivanjaison18@gmail.com",
         "password": "pulikkottil8",
-        "port": 587
+        "port": 465,
+        "server": "smtp.gmail.com"
     }
 }

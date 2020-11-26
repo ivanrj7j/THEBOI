@@ -7,6 +7,7 @@ from date import datenow
 from date import check_age
 from flask_mail import Mail
 from flask_mail import Message
+from random import randint
 
 # importing all required modules
 settings = json.load(open('settings.json', 'r'))
@@ -15,9 +16,10 @@ title = general_settings['title']
 secret_key = general_settings['skey']
 db = general_settings['db']
 email_settings = settings['email']
-email = email['sender']
-password = email['password']
-port = email['port']
+email_id = email_settings['sender']
+password = email_settings['password']
+port = email_settings['port']
+server = email_settings['server']
 # importing some required variables z
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = db
@@ -25,9 +27,10 @@ app.config['SECRET_KEY'] = secret_key
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAIL_PORT'] = port
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = email
+app.config['MAIL_USERNAME'] = email_id
 app.config['MAIL_PASSWORD'] = password
-db = SQLAlchemy(pp)
+app.config['MAIL_SERVER'] = server
+db = SQLAlchemy(app)
 mail = Mail(app)
 
 
@@ -43,7 +46,12 @@ class Users(db.Model):
     gender = db.Column(db.String)
     birthday = db.Column(db.DateTime)
     date = db.Column(db.DateTime, default=datenow())
+    v = db.Column(db.Integer, default=0)
 
+class Verification(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user = db.Column(db.Integer)
+    otp = db.Column(db.Integer)
 
 '''Models declaration end'''
 
@@ -117,6 +125,16 @@ def insert():
     session['username'] = un
     db.session.add(user)
     db.session.commit()
+    try:
+      random_number = randint(100000, 999999)
+      verification = Verification(user=email, otp=random_number)
+      db.session.add(verification)
+      db.session.commit()
+      msg = Message('Thanks for Signing Up', sender = email_id, recipients = [email])
+      msg.html = f'<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Welcome to THEBOI</title></head><body style=" font-family:sans-serif;"><h1 style="color: #2D88FF;">Hello {name},</h1><p>Thanks for Signing Up for THEBOI.</p><p>Your verification code is: </p><h2 style="color: #2D88FF;">{random_number}</h2><p>Make sure you read all our <a href="/terms" style="color: #2D88FF;">Terms and Condition</a></p></body></html>'
+      mail.send(msg)
+    except:
+      pass
     return 'op'
   else:
     return redirect('/')
