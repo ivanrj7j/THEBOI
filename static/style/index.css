@@ -183,4 +183,50 @@
 .fullscreen:hover {
   color: #3578E5;
 }
+
+.vfied {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.vfied textarea {
+  color: #E4E6EB;
+  background-color: #606770;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  resize: none;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.vfied button {
+  color: #E4E6EB;
+  background: #2D88FF;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+  padding: 10px;
+  width: 100px;
+  margin: 15px auto;
+}
+
+.vfied button:hover {
+  color: #ffffff;
+  background: #3578E5;
+}
+
+.vfied #file {
+  display: none;
+}
 /*# sourceMappingURL=index.css.map */

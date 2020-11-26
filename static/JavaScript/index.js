@@ -1,6 +1,12 @@
 
 // content start 
 var like_btns = document.querySelectorAll('.like');
+var post_txt = document.getElementById('post_txt');
+var fbtn = document.getElementById('fbtn');
+var post = document.getElementById('upload');
+var file = document.getElementById('file');
+var fd = new FormData();
+var xhr = new XMLHttpRequest();
 
 function like_it(post) {
 
@@ -184,10 +190,47 @@ function change_width(items, value) {
 
 }
 
+fbtn.addEventListener('click', () => {
+    file.click()
+})
 
-// for (let index = 0; index < actions.length; index++) {
-//     const element = actions[index];
-//     console.log(element)
-// }
+post.addEventListener('click', () => {
+
+    fd.append('text', post_txt.value);
+    if (file.files.length == 0) {
+        fd.append('type', 'text');
+        fd.append('file', 'None');
+    } else {
+        var file_type = file.files[0].name.split('.');
+        file_type = file_type[file_type.length - 1].toLowerCase();
+        var videos = ['mp4'];
+        var pictures = ['png', 'jpg', 'jpeg'];
+        console.log(file_type);
+        if (videos.includes(file_type)) {
+            fd.append('file', file.files[0]);
+            fd.append('type', 'video');
+        }
+        else if (pictures.includes(file_type)) {
+            fd.append('file', file.files[0]);
+            fd.append('type', 'picture');
+        }
+        else {
+            alert("File type not supported");
+        }
+    }
+    xhr.open('POST', '/post');
+    xhr.upload.addEventListener('progress', (e) => {
+        var progress = Math.round((e.loaded / e.total) * 100);
+        post.innerHTML = 'Uploading... ' + progress + '%';
+        console.log(progress);
+
+    });
+    xhr.addEventListener('load', () => {
+        alert('Uploaded')
+        location.reload();
+    })
+    xhr.send(fd);
+})
+
 
 // content end

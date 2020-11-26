@@ -168,5 +168,12 @@ def veri():
   else:
     return redirect('/')
 
+@app.route('/post', methods=['GET', 'POST'])
+def post():
+  if request.method == 'POST':
+    return "hi"
+  else:
+    return redirect('/')
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)

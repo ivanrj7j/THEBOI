@@ -8,7 +8,12 @@
         <p>You need to <a href="/verify">verify</a> your account to post</p>
     </div>
     {% else %}
-    v == 1
+    <div class="post_it vfied">
+        <textarea name="" id="post_txt" cols="30" rows="10"></textarea>
+        <button id="fbtn">Upload File</button>
+        <button id="upload">Post</button>
+        <input type="file" name="" accept="video/mp4,image/*" id="file">
+    </div>
     {% endif %}
 
 </div>
