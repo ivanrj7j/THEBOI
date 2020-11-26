@@ -1,6 +1,7 @@
 from flask import *
 from flask_sqlalchemy import sqlalchemy
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import update
 import json
 from hashlib import md5
 from date import datenow
@@ -47,6 +48,7 @@ class Users(db.Model):
     birthday = db.Column(db.DateTime)
     date = db.Column(db.DateTime, default=datenow())
     v = db.Column(db.Integer, default=0)
+    p = db.Column(db.String, default='profile/notAvailable.png')
 
 class Verification(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -71,7 +73,8 @@ def check_log():
 @app.route('/')
 def index():
     if check_log():
-        return render_template('index.html', js='JavaScript/index.js', css='style/index.css', title=title)
+        verification = Users.query.filter_by(email=session['user']).first()
+        return render_template('index.html', js='JavaScript/index.js', css='style/index.css', title=title, v=verification.v, p=verification.p)
     else:
         return redirect('signup')
 
@@ -136,6 +139,32 @@ def insert():
     except:
       pass
     return 'op'
+  else:
+    return redirect('/')
+
+@app.route('/verify', methods=['GET', 'POST'])
+def verify():
+  verification = Users.query.filter_by(email=session['user']).first()
+  if verification.v == 0:
+    return render_template('verify.html', p=verification.p, title=title, css='style/login.css', js='JavaScript/verify.js')
+  else:
+    redirect('/')
+
+@app.route('/veri', methods=['GET', 'POST'])
+def veri():
+  if request.method == 'POST':
+    vcode = request.form.get('v')
+    v = Verification.query.filter_by(user=session['user'], otp=vcode).first()
+    if v == None:
+      return 'n'
+    else:
+      user = Users.query.filter_by(email=session['user']).first()
+      user.v = 1
+      db.session.flush()
+      db.session.commit()
+      verification_entry = Verification.query.filter_by(user=session['user'], otp=vcode).delete()
+      db.session.commit()
+      return 'o'
   else:
     return redirect('/')
 

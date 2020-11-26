@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 {% block header %}
 
+<div class="content">
+    {% if v==0 %}
+    <div class="post_it">
+        <h2>Oops</h2>
+        <p>You need to <a href="/verify">verify</a> your account to post</p>
+    </div>
+    {% else %}
+    v == 1
+    {% endif %}
+
+</div>
+
 <div class="content post_info">
     <div class="post_info">
         <div class="poster_info">

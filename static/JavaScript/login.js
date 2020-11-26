@@ -101,7 +101,7 @@ signup.addEventListener('click', () => {
         xhr.open('POST', '/insert')
         xhr.send(fd)
         xhr.upload.addEventListener('progress', ()=>{
-
+            signup.innerHTML = 'Wait...'
         });
         xhr.addEventListener('load', ()=>{
             window.open('/', '_self')
