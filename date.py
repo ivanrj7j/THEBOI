@@ -10,6 +10,12 @@ def datenow():
     d1 = today.strftime("%d/%m/%Y")
     return d1
 
+def datet():
+    """
+    Returns the date
+    """
+    return datetime.now()
+
 def check_age(dated, browser):
     """
     Checks the age of user

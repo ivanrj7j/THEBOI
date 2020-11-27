@@ -5,7 +5,7 @@ from sqlalchemy import update
 import json
 from hashlib import md5
 from date import datenow
-from date import check_age
+from date import datet
 from flask_mail import Mail
 from flask_mail import Message
 from random import randint
@@ -122,6 +122,7 @@ def insert():
     un = request.form.get('un')
     gender = request.form.get('gender')
     dob = request.form.get('dob')
+    ps = md5(ps.encode('UTF-8')).hexdigest()
     user = Users(email=email, password=ps, name=name, username=un, gender=gender, birthday=dob)
     session['user'] = email
     session['name'] = name
@@ -172,6 +173,52 @@ def veri():
 def post():
   if request.method == 'POST':
     return "hi"
+  else:
+    return redirect('/')
+
+@app.route('/login', methods=['GET', 'POST'])
+def log():
+  if "user" in session:
+    return redirect('/')
+  else:
+    return render_template('l.html', title=title, js='JavaScript/l.js', css='style/login.css')
+
+
+@app.route('/chk', methods=['GET', 'POST'])
+def chk():
+  if request.method == 'POST':
+    email = request.form.get('email')
+    password = request.form.get('password')
+    password = md5(password.encode('UTF-8')).hexdigest()
+    result = Users.query.filter_by(email=email, password=password).first()
+    result_alt = Users.query.filter_by(username=email, password=password).first()
+    if result == None and result_alt == None:
+      return "hi"
+    else:
+      if result != None:
+        e = result.email
+        n = result.name
+        u = result.username
+      elif result_alt != None:
+        e = result_alt.email
+        n = result_alt.name
+        u = result_alt.username
+      else:
+        return "hi"
+      session['user'] = e
+      session['name'] = n
+      session['username'] = u
+
+      p = request.user_agent.platform
+      b = request.user_agent.browser
+      time = datet()
+      try:
+        msg = Message('Was that you?', sender = "THE BOI Team", recipients = [e])
+        msg.html = f'<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Welcome to THEBOI</title></head><body style=" font-family:sans-serif;"><h1 style="color: #2D88FF;">Hello {n},</h1><p>Hey there, we noticed that you logged in to our website in a {p} device using {b} on {time}. If it was not you, please let us know <a href="/help">here.</a></p></body></html>'
+        mail.send(msg)
+      except:
+        pass
+      return 'ok'
   else:
     return redirect('/')
 

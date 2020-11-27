@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +27,12 @@
             <a href="#"><i class="fas fa-cog"></i></a>
             <a href="#"><i class="fas fa-users"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
+            {% if v %}
             <a href=""><img src="{{ url_for('static', filename=p) }}" alt="" class="profile_image_nav"></a>
+            {% else %}
+            
+            {% endif %}
+
         </div>
         <div class="burger">
             <button class="barsline"><i class="fa fa-bars" aria-hidden="true" id="barsline"></i></button>
@@ -36,14 +42,12 @@
 
     {% block header %}{% endblock %}
 
-    
-<!-- testing how the website looks  -->
-<!-- todo:fetch posts from flask  -->
-<script src="{{ url_for('static', filename='JavaScript/app.js') }}"></script>
-<script src="{{ url_for('static', filename=js) }}"></script>
+
+    <!-- testing how the website looks  -->
+    <!-- todo:fetch posts from flask  -->
+    <script src="{{ url_for('static', filename='JavaScript/app.js') }}"></script>
+    <script src="{{ url_for('static', filename=js) }}"></script>
 </body>
 
 </html>
 {% block foot %}{% endblock %}
-
-    
