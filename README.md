@@ -9,3 +9,6 @@ This website is made using the framework flask.
 #Requirements
 
 You will obviously need to have Flask installed, you will also need Flask SQLAlchmey, Flask Mail etc to use this website
+
+
+If anyone has any suggesions, let me know...
