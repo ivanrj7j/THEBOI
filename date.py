@@ -14,7 +14,7 @@ def datet():
     """
     Returns the date
     """
-    return datetime.now()
+    return datetime.now().strftime("%d/%m/%Y %H:%M")
 
 def check_age(dated, browser):
     """
