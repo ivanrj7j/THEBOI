@@ -5,8 +5,8 @@
         "db": "mysql://root@localhost/boi"
     },
     "email":{
-        "sender": "ivanjaison18@gmail.com",
-        "password": "pulikkottil8",
+        "sender": "youremail@gmail.com",
+        "password": "yourpassword",
         "port": 465,
         "server": "smtp.gmail.com"
     }
